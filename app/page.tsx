@@ -33,6 +33,16 @@ export default function Home() {
     }
   }
 
+  const scrollToWaitlist = () => {
+    const element = document.getElementById('waitlist-form')
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#F5F1ED]">
       {/* Launch Banner */}
@@ -71,7 +81,7 @@ export default function Home() {
             </div>
 
             {/* White Box with Waitlist Form Only */}
-            <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg text-center">
+            <div id="waitlist-form" className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg text-center">
               <h2 className="text-xl font-mazier font-semibold text-[#2D2D2D] mb-3">
                 Join our Waitlist! ✨
               </h2>
@@ -432,12 +442,12 @@ export default function Home() {
               <p className="text-[#5D5D5D] font-asfalit text-lg mb-6 max-w-2xl mx-auto">
                 Be part of closing the gender health gap. Every waitlist signup brings us closer to launching products that support women's health while funding critical research.
               </p>
-              <a 
-            href="#waitlist"
-            className="inline-block bg-[#2D2D2D] text-white px-8 py-4 rounded-lg font-asfalit font-semibold hover:bg-[#1D1D1D] transition text-lg"
-          >
-            Join the Waitlist
-          </a>
+              <button 
+                onClick={scrollToWaitlist}
+                className="inline-block bg-[#2D2D2D] text-white px-8 py-4 rounded-lg font-asfalit font-semibold hover:bg-[#1D1D1D] transition text-lg cursor-pointer"
+              >
+                Join the Waitlist
+              </button>
             </div>
           </div>
         </div>
@@ -504,12 +514,12 @@ export default function Home() {
           <p className="text-black/70 font-asfalit text-lg mb-8 max-w-2xl mx-auto">
             Join thousands of women who are waiting for a better approach to feminine wellness.
           </p>
-          <a 
-            href="#waitlist"
-            className="inline-block bg-[#2D2D2D] text-white px-8 py-4 rounded-lg font-asfalit font-semibold hover:bg-[#1D1D1D] transition text-lg"
+          <button 
+            onClick={scrollToWaitlist}
+            className="inline-block bg-[#2D2D2D] text-white px-8 py-4 rounded-lg font-asfalit font-semibold hover:bg-[#1D1D1D] transition text-lg cursor-pointer"
           >
             Join the Waitlist
-          </a>
+          </button>
         </div>
       </section>
 
@@ -570,3 +580,5 @@ export default function Home() {
     </div>
   )
 }
+
+
